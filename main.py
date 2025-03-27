@@ -13,24 +13,24 @@ from bill_scraper import check_bill_details_for_scn, WebDriverWait, get_session_
 with open("config.yaml") as file:
     config = yaml.load(file, Loader=SafeLoader)
 
+# Initialize authenticator
 authenticator = stauth.Authenticate(
-    config["credentials"],
-    config["cookie"]["name"],
-    config["cookie"]["key"],
-    config["cookie"]["expiry_days"],
-    # config["preauthorized"],
+    credentials=config['credentials'],
+    cookie_name=config['cookie']['name'],
+    cookie_key=config['cookie']['key'],  # Change 'key' to 'cookie_key'
+    cookie_expiry_days=config['cookie']['expiry_days']
 )
 
-# Authentication
-name, authentication_status, username = authenticator.login(
-    location='main',
-    fields={
-        'Form name': 'Login',
-        'Username': 'Username',
-        'Password': 'Password',
-        'Login': 'Login'
-    }
-)
+
+# Render the login widget
+authenticator.login(location='main', key='login')
+
+# Retrieve authentication details from session state
+name = st.session_state.get('name')
+authentication_status = st.session_state.get('authentication_status')
+username = st.session_state.get('username')
+
+
 if authentication_status:
     st.sidebar.title(f"Welcome {name}")
     authenticator.logout("Logout", "sidebar")
