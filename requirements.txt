@@ -1,0 +1,7 @@
+selenium==4.26.1
+pandas==2.2.2
+streamlit==1.40.2
+ddddocr==1.5.6
+bs4==0.0.2
+pillow==10.3.0
+streamlit-authenticator

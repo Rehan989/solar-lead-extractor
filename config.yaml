@@ -1,0 +1,17 @@
+credentials:
+  usernames:
+    admin:
+      email: admin@example.com
+      name: Admin User
+      password: $2b$12$NCqH9.gbRJZxsJCB2QjU1ONarRgUiDHBP/0pyQ6fZJXUbKHADT7oa  # Password is "admin123"
+    user1:
+      email: user1@example.com
+      name: Regular User
+      password: $2b$12$BI5YV03cMdZeq7ByLkzWAu0F9dYvzCsGt4K9hPGYZ.U0i2ba9p8YW  # Password is "password123"
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: streamlit_cookie
+preauthorized:
+  emails:
+    - newuser@example.com 
