@@ -24,9 +24,13 @@ authenticator = stauth.Authenticate(
 # Authentication
 name, authentication_status, username = authenticator.login(
     location='main',
-    fields={'Form name': 'Login'}
+    fields={
+        'Form name': 'Login',
+        'Username': 'Username',
+        'Password': 'Password',
+        'Login': 'Login'
+    }
 )
-
 if authentication_status:
     st.sidebar.title(f"Welcome {name}")
     authenticator.logout("Logout", "sidebar")
