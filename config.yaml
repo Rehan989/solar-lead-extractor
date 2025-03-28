@@ -8,6 +8,10 @@ credentials:
       email: user1@example.com
       name: Regular User
       password: $2b$12$BI5YV03cMdZeq7ByLkzWAu0F9dYvzCsGt4K9hPGYZ.U0i2ba9p8YW  # Password is "password123"
+    rirvanaenergyadmin:
+      email: user1@example.com
+      name: Regular User
+      password: $2b$12$OFeivAU0tJZWQpAtKniEm.6nHn5X/NPQo6oov1vSIQaIDQf5g.wRu
 cookie:
   expiry_days: 30
   key: some_signature_key
